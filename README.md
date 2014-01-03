@@ -140,8 +140,10 @@ grunt.initConfig({
 Now if you wanted to deploy code from the development environment to the production environment, you would simply run:
 
 ```
-grunt kinvey:pulldev kinvey:pushprod
+grunt kinvey:pulldev kinvey:pushprod:"optional commit message"
 ```
+
+Targets that use the `deploy` command can accept an optional commit message for the deploy which is specified after the target name.
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).

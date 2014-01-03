@@ -67,6 +67,10 @@ module.exports = function(grunt) {
             args.push('--debug', options.debug);
         }
 
+        if (this.args.length === 1 && data.command === 'deploy') {
+            args.push('--message', this.args.shift());
+        }
+
         if (this.errorCount > 0) {
             done(new Error('An error has occured.'));
             return;
