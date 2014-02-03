@@ -23,9 +23,7 @@ module.exports = function(grunt) {
 
         var options = this.options({
             email: process.env["KINVEY_EMAIL"],
-            password: process.env["KINVEY_PASSWORD"],
-            quiet: true,
-            debug: false
+            password: process.env["KINVEY_PASSWORD"]
         });
 
         var data = this.data;
@@ -63,8 +61,12 @@ module.exports = function(grunt) {
 //            args.push('--app', options.app);
 //        }
 
+        // Options no longer supported from v0.2.0
         if (options.debug) {
-            args.push('--debug', options.debug);
+            grunt.log.warning('The "debug" option is no longer supported');
+        }
+        if (options.quiet) {
+            grunt.log.warn('The "quiet" option is no longer supported');
         }
 
         if (this.args.length === 1 && data.command === 'deploy') {
@@ -78,25 +80,15 @@ module.exports = function(grunt) {
 
         var child = {
             cmd: 'kinvey',
-            args: args
+            args: args,
+            opts: {
+                stdio: 'inherit'
+            }
         };
 
-        if (options.quiet) {
-            args.push('--quiet');
-        } else {
-            child.opts = {
-                stdio: 'inherit'
-            };
-        }
 
         var kinvey = grunt.util.spawn(child, function (error, result, code) {
             done(error);
         });
-
-        // even with --quiet option the kinvey script will wait for input so send it a linefeed to continue
-        if (options.quiet && data.command === 'refresh') {
-            kinvey.stdin.write(grunt.util.linefeed);
-        }
-
     });
 };
