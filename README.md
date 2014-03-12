@@ -4,6 +4,8 @@
 
 *Note:* This plugin does NOT include the `kinvey` command line tool.
 
+Tested with version Kinvey CLI 0.3.2.
+
 ## Getting Started
 This plugin requires Grunt `~0.4.2`
 
@@ -144,6 +146,21 @@ grunt kinvey:pulldev kinvey:pushprod:"optional commit message"
 ```
 
 Targets that use the `deploy` command can accept an optional commit message for the deploy which is specified after the target name.
+
+## Changelog
+
+### 0.2.0
+
+* Deprecate 'debug' and 'quiet' options.
+* Add support for specifying a commit message when publishing.
+
+### 0.1.1
+
+* Downgraded Grunt dependancy version for greater compatibility.
+
+### 0.1.0
+
+* Initial release
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
