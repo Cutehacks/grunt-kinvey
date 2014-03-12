@@ -1,7 +1,7 @@
 {
   "name": "grunt-kinvey",
   "description": "A Grunt plugin that wraps the kinvey command line tool for managing business logic.",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "homepage": "https://github.com/Cutehacks/grunt-kinvey",
   "author": {
     "name": "Jason Barron",
