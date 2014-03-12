@@ -56,10 +56,9 @@ module.exports = function(grunt) {
             args.push('--password', options.password);
         }
 
-        // TODO: Disabled due to http://support.kinvey.com/hc/communities/public/questions/200667786--BUG-REPORT-kinvey-command-line-tool-does-not-accept-app-argument
-//        if (options.app) {
-//            args.push('--app', options.app);
-//        }
+        if (options.app) {
+            args.push('--app', options.app);
+        }
 
         // Options no longer supported from v0.2.0
         if (options.debug) {
