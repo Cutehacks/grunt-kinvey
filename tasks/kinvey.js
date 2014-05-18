@@ -45,7 +45,7 @@ module.exports = function(grunt) {
         }
 
         if (!options.email && !options.password) {
-            grunt.log.warn('No email/password specified. Will attempt to use .kinvey credentials.');
+            grunt.log.writeln('No email/password specified. Will attempt to use .kinvey credentials.');
         }
 
         if (options.email) {
