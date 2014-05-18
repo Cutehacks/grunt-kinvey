@@ -32,7 +32,7 @@ module.exports = function(grunt) {
         var supportedCommands = ['deploy', 'refresh'];
         if (!data.command) {
             grunt.log.error('kinvey tasks require that you specify a "command"');
-        } else if (supportedCommands.indexOf(data.command >= 0)) {
+        } else if (supportedCommands.indexOf(data.command) >= 0) {
             args.push(data.command);
         } else {
             grunt.log.error('Unsupported command: ' + data.command);
