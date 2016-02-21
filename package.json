@@ -35,9 +35,10 @@
     "grunt": "~0.4.0"
   },
   "peerDependencies": {
-    "grunt": "~0.4.0"
+    "grunt": ">=0.4.0"
   },
   "keywords": [
-    "gruntplugin", "kinvey"
+    "gruntplugin",
+    "kinvey"
   ]
 }
